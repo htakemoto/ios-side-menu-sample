@@ -23,9 +23,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuTableView.delegate = self
         menuTableView.dataSource = self
         
-        var menuItem = MenuItem.init(name:"Main", icon:"", storyboard: "Main")
+        var menuItem = MenuItem.init(name:"Main", icon:"ic_home", storyboard: "Main")
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Profile", icon:"", storyboard: "Profile")
+        menuItem = MenuItem.init(name:"Profile", icon:"ic_account_box", storyboard: "Profile")
         menuItems.append(menuItem)
     }
 
@@ -53,6 +53,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = menuTableView.dequeueReusableCell(withIdentifier: "MenuCell")
+        let menuItem = menuItems[indexPath.row]
+        cell?.imageView!.image = UIImage(named: menuItem.icon)
         cell?.textLabel?.text = menuItems[indexPath.row].displayName
         return cell!
     }
