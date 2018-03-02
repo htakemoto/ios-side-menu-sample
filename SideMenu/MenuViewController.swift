@@ -27,22 +27,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuItems.append(menuItem)
         menuItem = MenuItem.init(name:"Profile", icon:"ic_account_box", storyboard: "Profile")
         menuItems.append(menuItem)
+        menuItem = MenuItem.init(name:"Favorites", icon:"ic_favorite_border", storyboard: "Favorites")
+        menuItems.append(menuItem)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Button Actions
-    
-    @IBAction func MainButtonPressed(_ sender: UIButton) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let nav = appDelegate.window?.rootViewController as! UINavigationController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
-        nav.pushViewController(viewController, animated: true)
-        self.hideMenu()
     }
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
@@ -52,11 +43,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = menuTableView.dequeueReusableCell(withIdentifier: "MenuCell")
+        guard let cell = menuTableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as? MenuItemTableCell else {
+            fatalError("The dequeued cell is not an instance of MenuItemTableCell.")
+        }
         let menuItem = menuItems[indexPath.row]
-        cell?.imageView!.image = UIImage(named: menuItem.icon)
-        cell?.textLabel?.text = menuItems[indexPath.row].displayName
-        return cell!
+        cell.iconImageView.image = UIImage(named: menuItem.icon)
+        cell.nameLabel.text = menuItems[indexPath.row].displayName
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

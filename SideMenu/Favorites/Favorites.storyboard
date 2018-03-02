@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
-        <scene sceneID="EOd-ph-Yuz">
+        <!--Favorites-->
+        <scene sceneID="Tkt-c4-s9t">
             <objects>
-                <viewController storyboardIdentifier="Profile" id="YBX-ih-sWH" customClass="ProfileViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ssv-Vz-eNN">
+                <viewController storyboardIdentifier="Favorites" id="eyq-Sg-eun" customClass="FavoritesViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lIg-pl-yGK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsq-l9-qqt">
-                                <rect key="frame" x="163" y="323" width="49" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-7v-Tg6">
+                                <rect key="frame" x="153" y="323" width="69" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,22 +27,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Zsq-l9-qqt" firstAttribute="centerX" secondItem="Ssv-Vz-eNN" secondAttribute="centerX" id="7YY-q0-rIT"/>
-                            <constraint firstItem="Zsq-l9-qqt" firstAttribute="centerY" secondItem="Ssv-Vz-eNN" secondAttribute="centerY" id="nH1-ES-wvw"/>
+                            <constraint firstItem="uxX-7v-Tg6" firstAttribute="centerY" secondItem="lIg-pl-yGK" secondAttribute="centerY" id="1IJ-Tv-LGj"/>
+                            <constraint firstItem="uxX-7v-Tg6" firstAttribute="centerX" secondItem="lIg-pl-yGK" secondAttribute="centerX" id="lCA-L8-5ym"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="g7K-ra-Mzn"/>
+                        <viewLayoutGuide key="safeArea" id="zgf-YL-4XU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="pX6-za-KOA">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="SjW-dP-08o">
+                    <navigationItem key="navigationItem" title="Favorites" id="Hyk-w6-y3m">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="3KL-4M-Rcl">
                             <connections>
-                                <action selector="menuButtonPressed:" destination="YBX-ih-sWH" id="ODh-55-lOq"/>
+                                <action selector="menuButtonPressed:" destination="eyq-Sg-eun" id="kcp-1m-Enr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6BL-Na-ia6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5uT-3p-pHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="147"/>
+            <point key="canvasLocation" x="137" y="118"/>
         </scene>
     </scenes>
     <resources>
