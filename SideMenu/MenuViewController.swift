@@ -60,14 +60,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let navigationController = appDelegate.window?.rootViewController as! UINavigationController
-        
         tableView.deselectRow(at: indexPath, animated: true)
         let menuItem = menuItems[indexPath.row]
+        
+        // set a selected viewController
         let storyboard = UIStoryboard(name: menuItem.storyboard, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: menuItem.storyboard)
-        navigationController.pushViewController(viewController, animated: true)
+        
+        // reset viewControllers inside of rootViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = UINavigationController(rootViewController: viewController)
+        appDelegate.window?.makeKeyAndVisible()
         
         self.hideMenu()
     }
