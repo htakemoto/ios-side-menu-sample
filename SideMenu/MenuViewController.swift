@@ -61,9 +61,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let viewController = storyboard.instantiateViewController(withIdentifier: menuItem.storyboard)
         
         // reset viewControllers inside of rootViewController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = UINavigationController(rootViewController: viewController)
-        appDelegate.window?.makeKeyAndVisible()
+        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        guard let navigationController = rootViewController as? UINavigationController else { return }
+        navigationController.viewControllers = [viewController]
         
         self.hideMenu()
     }
@@ -71,8 +71,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Menu Actions
 
     func showMenu() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController?.view.addSubview(self.view)
+        UIApplication.shared.keyWindow?.rootViewController?.view.addSubview(self.view)
         
         self.beginAppearanceTransition(true, animated: true)
         self.view.isHidden = false
