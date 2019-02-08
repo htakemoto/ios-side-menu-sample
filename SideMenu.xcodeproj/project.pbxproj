@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23F013A0220DCA790061A610 /* FavoritesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0139F220DCA790061A610 /* FavoritesTabBarController.swift */; };
 		23F013A2220DCB9C0061A610 /* FavTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013A1220DCB9C0061A610 /* FavTwoViewController.swift */; };
+		23F013A4220DCD9F0061A610 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013A3220DCD9F0061A610 /* RootViewController.swift */; };
 		45DB372920491DAA00ECC937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB372820491DAA00ECC937 /* AppDelegate.swift */; };
 		45DB372E20491DAA00ECC937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB372C20491DAA00ECC937 /* Main.storyboard */; };
 		45DB373020491DAA00ECC937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DB372F20491DAA00ECC937 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		23F0139F220DCA790061A610 /* FavoritesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTabBarController.swift; sourceTree = "<group>"; };
 		23F013A1220DCB9C0061A610 /* FavTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTwoViewController.swift; sourceTree = "<group>"; };
+		23F013A3220DCD9F0061A610 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		45DB372520491DAA00ECC937 /* SideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DB372820491DAA00ECC937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DB372D20491DAA00ECC937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				45DB372820491DAA00ECC937 /* AppDelegate.swift */,
 				45DB373120491DAA00ECC937 /* LaunchScreen.storyboard */,
 				45DB372C20491DAA00ECC937 /* Main.storyboard */,
+				23F013A3220DCD9F0061A610 /* RootViewController.swift */,
 				45DB37402049246200ECC937 /* MainViewController.swift */,
 				45DB374B2049823600ECC937 /* MenuItemTableCell.swift */,
 				45DB373A204920A500ECC937 /* MenuViewController.swift */,
@@ -179,6 +182,7 @@
 			files = (
 				45DB37412049246200ECC937 /* MainViewController.swift in Sources */,
 				45DB373B204920A500ECC937 /* MenuViewController.swift in Sources */,
+				23F013A4220DCD9F0061A610 /* RootViewController.swift in Sources */,
 				45DB375120498D4100ECC937 /* FavOneViewController.swift in Sources */,
 				23F013A2220DCB9C0061A610 /* FavTwoViewController.swift in Sources */,
 				45DB374C2049823600ECC937 /* MenuItemTableCell.swift in Sources */,
