@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavTwoViewController: RootViewController {
+class FavTwoViewController: RootTabViewController {
     
     // MARK: View Life Cycles
     

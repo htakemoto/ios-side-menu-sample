@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xO0-Sf-Xuy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xO0-Sf-Xuy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -153,16 +153,50 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hCb-nI-gXF"/>
+                        <segue destination="sOR-sZ-Qyj" kind="relationship" relationship="rootViewController" id="eCm-2p-i4T"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrI-J7-lz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263" y="134"/>
+            <point key="canvasLocation" x="-956" y="134"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Ur3-Yz-Kdk">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="sOR-sZ-Qyj" customClass="LoginViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KxD-tx-OYM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUs-w6-yUw">
+                                <rect key="frame" x="147.5" y="318.5" width="80" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="4rl-FU-2Mb"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="sOR-sZ-Qyj" eventType="touchUpInside" id="gUh-CR-NiN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gUs-w6-yUw" firstAttribute="centerX" secondItem="KxD-tx-OYM" secondAttribute="centerX" id="5Pf-7K-6Hj"/>
+                            <constraint firstItem="gUs-w6-yUw" firstAttribute="centerY" secondItem="KxD-tx-OYM" secondAttribute="centerY" id="E58-hP-WTP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fYD-6z-RYW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XeO-n4-aUB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5CG-0A-FgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218.40000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic_account_circle" width="48" height="48"/>
-        <image name="ic_menu" width="24" height="24"/>
+        <image name="ic_account_circle" width="96" height="96"/>
+        <image name="ic_menu" width="48" height="48"/>
     </resources>
 </document>

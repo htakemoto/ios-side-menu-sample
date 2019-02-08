@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootTabViewController: UIViewController {
     
     // MARK: View Life Cycles
 
@@ -17,7 +17,7 @@ class RootViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("FavTwoViewController:viewWillAppear")
+        print("RootTabViewController:viewWillAppear")
         self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu"), style: .plain, target: self, action: #selector(menuButtonPressed))
     }
     
