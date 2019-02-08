@@ -7,6 +7,13 @@
 
 import UIKit
 
+struct MenuItem {
+    var name: String
+    var icon: String
+    var id: String
+    var storyboard: String
+}
+
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Properties
@@ -23,11 +30,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuTableView.delegate = self
         menuTableView.dataSource = self
         
-        var menuItem = MenuItem.init(name:"Main", icon:"ic_home", storyboard: "Main")
+        var menuItem = MenuItem.init(name:"Main", icon:"ic_home", id: "Main", storyboard: "Main")
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Profile", icon:"ic_account_box", storyboard: "Profile")
+        menuItem = MenuItem.init(name:"Profile", icon:"ic_account_box", id: "Profile", storyboard: "Profile")
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Favorites", icon:"ic_favorite_border", storyboard: "Favorites")
+        menuItem = MenuItem.init(name:"Favorites", icon:"ic_favorite_border", id: "Favorites", storyboard: "Favorites")
+        menuItems.append(menuItem)
+        menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", id: "Login", storyboard: "Main")
         menuItems.append(menuItem)
     }
 
@@ -48,7 +57,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         let menuItem = menuItems[indexPath.row]
         cell.iconImageView.image = UIImage(named: menuItem.icon)
-        cell.nameLabel.text = menuItems[indexPath.row].displayName
+        cell.nameLabel.text = menuItems[indexPath.row].name
         return cell
     }
     
@@ -58,7 +67,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // set a selected viewController
         let storyboard = UIStoryboard(name: menuItem.storyboard, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: menuItem.storyboard)
+        let viewController = storyboard.instantiateViewController(withIdentifier: menuItem.id)
         
         // reset viewControllers inside of rootViewController
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
