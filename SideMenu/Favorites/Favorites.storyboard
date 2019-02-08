@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller-->
+        <!--Fav One View Controller-->
         <scene sceneID="Tkt-c4-s9t">
             <objects>
-                <viewController storyboardIdentifier="Favorites" id="eyq-Sg-eun" customClass="FavoritesViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eyq-Sg-eun" customClass="FavOneViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lIg-pl-yGK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-7v-Tg6">
-                                <rect key="frame" x="153" y="323" width="69" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-7v-Tg6">
+                                <rect key="frame" x="156" y="323" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,10 +32,57 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zgf-YL-4XU"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="dq6-GP-AKK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uT-3p-pHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="118"/>
+            <point key="canvasLocation" x="313" y="-97"/>
+        </scene>
+        <!--Fav Two View Controller-->
+        <scene sceneID="WeW-Y3-LAd">
+            <objects>
+                <viewController id="Cbl-0A-qvg" customClass="FavTwoViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9GP-MC-4z1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G27-bO-qGl">
+                                <rect key="frame" x="156" y="323" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G27-bO-qGl" firstAttribute="centerY" secondItem="9GP-MC-4z1" secondAttribute="centerY" id="HcT-jM-ebH"/>
+                            <constraint firstItem="G27-bO-qGl" firstAttribute="centerX" secondItem="9GP-MC-4z1" secondAttribute="centerX" id="jcK-5A-MgK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wuh-2Q-5GH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="iqp-9b-556"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVS-Xb-AaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="572"/>
+        </scene>
+        <!--Favorites Tab Bar Controller-->
+        <scene sceneID="aHm-le-3zF">
+            <objects>
+                <tabBarController storyboardIdentifier="Favorites" id="08a-4U-W4b" customClass="FavoritesTabBarController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MES-r8-A2a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eyq-Sg-eun" kind="relationship" relationship="viewControllers" id="5uy-gI-e6S"/>
+                        <segue destination="Cbl-0A-qvg" kind="relationship" relationship="viewControllers" id="fCL-bF-wRb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiH-hR-Ecx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="218"/>
         </scene>
     </scenes>
 </document>

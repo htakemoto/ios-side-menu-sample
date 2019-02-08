@@ -1,13 +1,13 @@
 //
-//  FavoritesViewController.swift
+//  FavTwoViewController.swift
 //  SideMenu
 //
-//  Created by Hiroshi Takemoto on 3/2/18.
+//  Created by Hiroshi Takemoto on 2/8/19.
 //
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
+class FavTwoViewController: UIViewController {
     
     // MARK: View Life Cycles
     
@@ -17,12 +17,12 @@ class FavoritesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu"), style: .plain, target: self, action: #selector(menuButtonPressed))
+        print("FavTwoViewController:viewWillAppear")
+        self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu"), style: .plain, target: self, action: #selector(menuButtonPressed))
     }
     
     // MARK: Button Actions
-
+    
     @objc func menuButtonPressed(sender: UIBarButtonItem) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.appMenu?.showMenu()
