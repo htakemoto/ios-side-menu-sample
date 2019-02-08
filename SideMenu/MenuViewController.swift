@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct MenuItem {
+    var name: String
+    var icon: String
+    var storyboard: String
+}
+
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Properties
@@ -48,7 +54,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         let menuItem = menuItems[indexPath.row]
         cell.iconImageView.image = UIImage(named: menuItem.icon)
-        cell.nameLabel.text = menuItems[indexPath.row].displayName
+        cell.nameLabel.text = menuItems[indexPath.row].name
         return cell
     }
     
