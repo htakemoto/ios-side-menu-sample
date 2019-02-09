@@ -39,6 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // show login screen
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "Login")
+        if let window = UIApplication.shared.delegate?.window {
+            if var currentViewController = window?.rootViewController {
+                // handle navigation controllers
+                if (currentViewController is UINavigationController){
+                    currentViewController = (currentViewController as! UINavigationController).visibleViewController!
+                }
+                // prevent from opening another login screen on login screen
+                if !(currentViewController is LoginViewController) {
+                    currentViewController.present(loginViewController, animated: false, completion: nil)
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

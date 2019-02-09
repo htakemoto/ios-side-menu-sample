@@ -18,21 +18,12 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("LoginViewController:viewWillAppear")
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: Button Actions
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        // set a selected viewController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
-        
-        // reset viewControllers inside of rootViewController
-        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        guard let navigationController = rootViewController as? UINavigationController else { return }
-        navigationController.viewControllers = [viewController]
-        navigationController.setNavigationBarHidden(false, animated: false)
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
