@@ -11,6 +11,7 @@ class FavoritesTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Favorites"
     }
     
     override func viewWillAppear(_ animated: Bool) {

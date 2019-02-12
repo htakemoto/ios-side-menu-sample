@@ -97,18 +97,31 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZn-Od-YDZ">
+                                                        <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZn-Od-YDZ">
                                                             <rect key="frame" x="15" y="7" width="28" height="28"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="38v-SY-0g5"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="OLd-fX-0Ql"/>
+                                                                <constraint firstAttribute="width" constant="28" id="bAm-11-GZa"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Paz-vO-VtT">
-                                                            <rect key="frame" x="65" y="11" width="210" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Paz-vO-VtT">
+                                                            <rect key="frame" x="65" y="12" width="210" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="nZn-Od-YDZ" secondAttribute="bottom" constant="8.5" id="5mZ-Hk-uJE"/>
+                                                        <constraint firstItem="Paz-vO-VtT" firstAttribute="leading" secondItem="nZn-Od-YDZ" secondAttribute="trailing" constant="22" id="EhT-NE-sh1"/>
+                                                        <constraint firstItem="nZn-Od-YDZ" firstAttribute="leading" secondItem="7st-sQ-Hrj" secondAttribute="leading" constant="15" id="NWZ-u8-PDL"/>
+                                                        <constraint firstItem="Paz-vO-VtT" firstAttribute="centerY" secondItem="nZn-Od-YDZ" secondAttribute="centerY" id="NoP-Sl-NFi"/>
+                                                        <constraint firstItem="Paz-vO-VtT" firstAttribute="trailing" secondItem="7st-sQ-Hrj" secondAttribute="trailingMargin" id="V93-aJ-22b"/>
+                                                        <constraint firstItem="nZn-Od-YDZ" firstAttribute="top" secondItem="7st-sQ-Hrj" secondAttribute="top" constant="7" id="aFG-fI-P3Z"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Paz-vO-VtT" secondAttribute="bottom" constant="13.5" id="mGI-7B-Twh"/>
+                                                        <constraint firstItem="Paz-vO-VtT" firstAttribute="top" secondItem="7st-sQ-Hrj" secondAttribute="top" constant="12" id="ob7-Q7-4d6"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <inset key="separatorInset" minX="65" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <connections>
@@ -136,6 +149,8 @@
                     <connections>
                         <outlet property="menuTableView" destination="jNO-97-hsb" id="Xo1-fF-vsb"/>
                         <outlet property="menuView" destination="FED-LS-hOX" id="Ofd-LE-na1"/>
+                        <outlet property="userEmailLabel" destination="ezi-sD-nGN" id="PIl-J2-8J5"/>
+                        <outlet property="userNameLabel" destination="MZN-kH-CAe" id="pup-Z1-8fR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdK-fb-HvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +187,7 @@
                                 <rect key="frame" x="147.5" y="316.5" width="80" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="4rl-FU-2Mb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="4rl-FU-2Mb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

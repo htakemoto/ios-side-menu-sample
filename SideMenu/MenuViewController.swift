@@ -9,6 +9,7 @@ import UIKit
 
 enum DisplayStyle {
     case change
+    case push
     case modal
 }
 
@@ -27,6 +28,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var menuItems: [MenuItem] = []
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
     
     // MARK: View Life Cycles
     
@@ -42,8 +45,23 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuItems.append(menuItem)
         menuItem = MenuItem.init(name:"Favorites", icon:"ic_favorite_border", id: "Favorites", storyboard: "Favorites", displayStyle: DisplayStyle.change)
         menuItems.append(menuItem)
+        menuItem = MenuItem.init(name:"Settings", icon:"ic_settings", id: "Settings", storyboard: "Settings", displayStyle: DisplayStyle.push)
+        menuItems.append(menuItem)
         menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", id: "Login", storyboard: "Main", displayStyle: DisplayStyle.modal)
         menuItems.append(menuItem)
+        
+        self.view.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.insertSubview(blurEffectView, at: 0)
+        
+        if (AuthService.shared.isAuthenticated) {
+            let user = AuthService.shared.getUserInfo()
+            userNameLabel.text = "\(user.firstName) \(user.lastName)"
+            userEmailLabel.text = "\(user.email)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +82,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let menuItem = menuItems[indexPath.row]
         cell.iconImageView.image = UIImage(named: menuItem.icon)
         cell.nameLabel.text = menuItems[indexPath.row].name
+        
+        if (menuItem.displayStyle == DisplayStyle.push) {
+            cell.accessoryType = .disclosureIndicator
+        }
         return cell
     }
     
@@ -81,12 +103,28 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let storyboard = UIStoryboard(name: menuItem.storyboard, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: menuItem.id)
         
-        if (menuItem.displayStyle == DisplayStyle.modal) {
-            // currently only used to display Login Screen modally
+        if (menuItem.displayStyle == DisplayStyle.change) {
+            // option 1: reset the current view controller to new one in stack of navigation controller
+            navigationController.setViewControllers([viewController], animated: false)
             
+            // Option 2: add a new view controller on top of the first view controller in stack of navigation controller
+            // if (navigationController.viewControllers.count > 0) {
+            //     navigationController.popToViewController(navigationController.viewControllers[0], animated: false)
+            // }
+            // if (object_getClassName(viewController) != object_getClassName(navigationController.viewControllers[0])) {
+            //     navigationController.pushViewController(viewController, animated: false)
+            // }
+        }
+        else if (menuItem.displayStyle == DisplayStyle.push) {
+            navigationController.pushViewController(viewController, animated: true)
+        }
+        else {
             // option 1: use current navigationController (viewController in container is optional)
             let container = UINavigationController(rootViewController: viewController)
-            container.setNavigationBarHidden(true, animated: false)
+            if (menuItem.name == "Logout") {
+                container.setNavigationBarHidden(true, animated: false)
+                AuthService.shared.logout()
+            }
             navigationController.present(container, animated: true, completion: nil)
             
             // option 2: search current viewController to present on top of it
@@ -98,18 +136,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //        }
             //        currentViewController.present(viewController, animated: true, completion: nil)
             //    }
-            // }
-        }
-        else {
-            // option 1: reset the current view controller to new one in stack of navigation controller
-            navigationController.setViewControllers([viewController], animated: false)
-            
-            // Option 2: add a new view controller on top of the first view controller in stack of navigation controller
-            // if (navigationController.viewControllers.count > 0) {
-            //     navigationController.popToViewController(navigationController.viewControllers[0], animated: false)
-            // }
-            // if (object_getClassName(viewController) != object_getClassName(navigationController.viewControllers[0])) {
-            //     navigationController.pushViewController(viewController, animated: false)
             // }
         }
         self.hideMenu()
@@ -125,7 +151,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.view.alpha = 0
         self.menuView.frame = self.menuView.frame.offsetBy(dx: -self.menuView.frame.size.width, dy: 0)
         
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.view.alpha = 1
             let bounds = self.menuView.bounds
             self.menuView.frame = CGRect(x:0, y:0, width:bounds.size.width, height:bounds.size.height)
@@ -140,7 +166,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.view.isHidden = false
         self.view.alpha = 1
         
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.view.alpha = 0
             self.menuView.frame = self.menuView.frame.offsetBy(dx: -self.menuView.frame.size.width, dy: 0)
         }, completion: {_ in

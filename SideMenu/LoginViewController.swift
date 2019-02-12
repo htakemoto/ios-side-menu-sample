@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     // MARK: Button Actions
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        AuthService.shared.login(username: "", password: "")
         self.dismiss(animated: true, completion: nil)
     }
 
