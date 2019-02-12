@@ -55,34 +55,44 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FED-LS-hOX">
                                 <rect key="frame" x="0.0" y="0.0" width="290" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-mK-6G0">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="142"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-mK-6G0">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="140"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_account_circle" translatesAutoresizingMaskIntoConstraints="NO" id="48I-rp-beT">
-                                                <rect key="frame" x="8" y="62" width="60" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_circle" translatesAutoresizingMaskIntoConstraints="NO" id="48I-rp-beT">
+                                                <rect key="frame" x="8" y="60" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="BCX-zY-1gH"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Ypf-IH-sie"/>
+                                                </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Steve Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZN-kH-CAe">
-                                                <rect key="frame" x="76" y="77" width="85" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZN-kH-CAe">
+                                                <rect key="frame" x="76" y="76" width="206" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="steve.jobs@apple.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-sD-nGN">
-                                                <rect key="frame" x="76" y="97" width="164" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="steve.jobs@apple.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-sD-nGN">
+                                                <rect key="frame" x="76" y="98" width="206" height="14"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="48I-rp-beT" secondAttribute="bottom" constant="20" id="0ag-1T-oOL"/>
+                                            <constraint firstAttribute="trailing" secondItem="ezi-sD-nGN" secondAttribute="trailing" constant="8" id="VdH-tE-for"/>
+                                            <constraint firstItem="MZN-kH-CAe" firstAttribute="leading" secondItem="48I-rp-beT" secondAttribute="trailing" constant="8" id="Wqd-Uf-9AE"/>
+                                            <constraint firstItem="ezi-sD-nGN" firstAttribute="leading" secondItem="48I-rp-beT" secondAttribute="trailing" constant="8" id="X93-t8-WJg"/>
+                                            <constraint firstAttribute="bottom" secondItem="ezi-sD-nGN" secondAttribute="bottom" constant="28" id="Y0U-zF-Lx7"/>
+                                            <constraint firstAttribute="trailing" secondItem="MZN-kH-CAe" secondAttribute="trailing" constant="8" id="emq-GB-693"/>
+                                            <constraint firstAttribute="height" constant="140" id="mJ0-rW-aB1"/>
+                                            <constraint firstItem="ezi-sD-nGN" firstAttribute="top" secondItem="MZN-kH-CAe" secondAttribute="bottom" constant="2" id="ssB-tU-DvS"/>
+                                            <constraint firstItem="48I-rp-beT" firstAttribute="leading" secondItem="J0o-mK-6G0" secondAttribute="leading" constant="8" id="tI2-hq-AEB"/>
+                                        </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jNO-97-hsb">
-                                        <rect key="frame" x="0.0" y="146" width="290" height="521"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jNO-97-hsb">
+                                        <rect key="frame" x="0.0" y="140" width="290" height="527"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <view key="tableFooterView" contentMode="scaleToFill" id="N1v-Rs-EWn">
                                             <rect key="frame" x="0.0" y="72" width="290" height="44"/>
@@ -135,6 +145,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="0fp-TL-JOC"/>
+                                    <constraint firstItem="J0o-mK-6G0" firstAttribute="leading" secondItem="FED-LS-hOX" secondAttribute="leading" id="8Tb-OM-tgY"/>
+                                    <constraint firstAttribute="bottom" secondItem="jNO-97-hsb" secondAttribute="bottom" id="B5M-Sg-1Tg"/>
+                                    <constraint firstAttribute="trailing" secondItem="jNO-97-hsb" secondAttribute="trailing" id="Lgc-xJ-W7A"/>
+                                    <constraint firstAttribute="trailing" secondItem="J0o-mK-6G0" secondAttribute="trailing" id="cFR-qz-kM6"/>
+                                    <constraint firstItem="jNO-97-hsb" firstAttribute="leading" secondItem="FED-LS-hOX" secondAttribute="leading" id="efh-6x-xvk"/>
+                                    <constraint firstItem="jNO-97-hsb" firstAttribute="top" secondItem="J0o-mK-6G0" secondAttribute="bottom" id="fOs-hd-Lik"/>
+                                    <constraint firstItem="J0o-mK-6G0" firstAttribute="top" secondItem="FED-LS-hOX" secondAttribute="top" id="mwE-ZV-SOf"/>
                                 </constraints>
                             </view>
                         </subviews>
