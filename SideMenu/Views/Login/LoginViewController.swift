@@ -15,11 +15,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("LoginViewController:viewWillAppear")
-    }
-    
     // MARK: Button Actions
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {

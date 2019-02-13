@@ -8,6 +8,8 @@
 import UIKit
 
 class FavoritesTabBarController: UITabBarController {
+    
+    // MARK: View Life Cycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
