@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // set navigation bar style
         let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.barStyle = .black
         navigationBarAppearace.barTintColor = UIColor(red: 30/255, green: 70/255, blue: 160/255, alpha: 1)
         navigationBarAppearace.tintColor = UIColor.white
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // initialize MenuViewController for side menu
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Menu")
-        self.appMenu = viewController as? MenuViewController
+        appMenu = viewController as? MenuViewController
         
         return true
     }

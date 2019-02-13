@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233216B62217B90B0057AAD0 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233216B52217B90B0057AAD0 /* Preferences.swift */; };
+		234C081F221458DE004AE2AD /* ContactsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C081E221458DE004AE2AD /* ContactsPageViewController.swift */; };
+		234C0821221459FE004AE2AD /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C0820221459FE004AE2AD /* PageOneViewController.swift */; };
+		234C082322145A0E004AE2AD /* PageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C082222145A0E004AE2AD /* PageTwoViewController.swift */; };
+		234C08252214727B004AE2AD /* FavThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C08242214727B004AE2AD /* FavThreeViewController.swift */; };
 		23F013A0220DCA790061A610 /* FavoritesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F0139F220DCA790061A610 /* FavoritesTabBarController.swift */; };
 		23F013A2220DCB9C0061A610 /* FavTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013A1220DCB9C0061A610 /* FavTwoViewController.swift */; };
 		23F013A4220DCD9F0061A610 /* RootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013A3220DCD9F0061A610 /* RootTabViewController.swift */; };
 		23F013A6220DD1C70061A610 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013A5220DD1C70061A610 /* LoginViewController.swift */; };
-		23F013B12212BE3A0061A610 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013B02212BE3A0061A610 /* SettingsViewController.swift */; };
+		23F013B12212BE3A0061A610 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013B02212BE3A0061A610 /* SettingsTableViewController.swift */; };
 		23F013B32212C0650061A610 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F013B22212C0650061A610 /* Settings.storyboard */; };
 		23F013B62212CBCD0061A610 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013B52212CBCD0061A610 /* User.swift */; };
 		23F013B92212D6FD0061A610 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013B82212D6FD0061A610 /* AuthService.swift */; };
 		23F013BC2213C1DB0061A610 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F013BB2213C1DB0061A610 /* Login.storyboard */; };
 		23F013BE2213DF010061A610 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013BD2213DF010061A610 /* RoundButton.swift */; };
+		23FCD89322168A230064602F /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCD89222168A220064602F /* AccountTableViewController.swift */; };
 		45DB372920491DAA00ECC937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB372820491DAA00ECC937 /* AppDelegate.swift */; };
 		45DB372E20491DAA00ECC937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB372C20491DAA00ECC937 /* Main.storyboard */; };
 		45DB373020491DAA00ECC937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DB372F20491DAA00ECC937 /* Assets.xcassets */; };
@@ -31,16 +37,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		233216B52217B90B0057AAD0 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		234C081E221458DE004AE2AD /* ContactsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPageViewController.swift; sourceTree = "<group>"; };
+		234C0820221459FE004AE2AD /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
+		234C082222145A0E004AE2AD /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
+		234C08242214727B004AE2AD /* FavThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavThreeViewController.swift; sourceTree = "<group>"; };
 		23F0139F220DCA790061A610 /* FavoritesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTabBarController.swift; sourceTree = "<group>"; };
 		23F013A1220DCB9C0061A610 /* FavTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTwoViewController.swift; sourceTree = "<group>"; };
 		23F013A3220DCD9F0061A610 /* RootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabViewController.swift; sourceTree = "<group>"; };
 		23F013A5220DD1C70061A610 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		23F013B02212BE3A0061A610 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		23F013B02212BE3A0061A610 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		23F013B22212C0650061A610 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		23F013B52212CBCD0061A610 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23F013B82212D6FD0061A610 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		23F013BB2213C1DB0061A610 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		23F013BD2213DF010061A610 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		23FCD89222168A220064602F /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		45DB372520491DAA00ECC937 /* SideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DB372820491DAA00ECC937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DB372D20491DAA00ECC937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				23F013BD2213DF010061A610 /* RoundButton.swift */,
+				233216B52217B90B0057AAD0 /* Preferences.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -94,7 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				23F013B22212C0650061A610 /* Settings.storyboard */,
-				23F013B02212BE3A0061A610 /* SettingsViewController.swift */,
+				23F013B02212BE3A0061A610 /* SettingsTableViewController.swift */,
+				23FCD89222168A220064602F /* AccountTableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -172,6 +186,10 @@
 				23F013A3220DCD9F0061A610 /* RootTabViewController.swift */,
 				45DB375020498D4100ECC937 /* FavOneViewController.swift */,
 				23F013A1220DCB9C0061A610 /* FavTwoViewController.swift */,
+				234C08242214727B004AE2AD /* FavThreeViewController.swift */,
+				234C081E221458DE004AE2AD /* ContactsPageViewController.swift */,
+				234C0820221459FE004AE2AD /* PageOneViewController.swift */,
+				234C082222145A0E004AE2AD /* PageTwoViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -254,12 +272,18 @@
 			files = (
 				45DB37412049246200ECC937 /* MainViewController.swift in Sources */,
 				45DB373B204920A500ECC937 /* MenuViewController.swift in Sources */,
+				233216B62217B90B0057AAD0 /* Preferences.swift in Sources */,
 				23F013BE2213DF010061A610 /* RoundButton.swift in Sources */,
-				23F013B12212BE3A0061A610 /* SettingsViewController.swift in Sources */,
+				23F013B12212BE3A0061A610 /* SettingsTableViewController.swift in Sources */,
+				23FCD89322168A230064602F /* AccountTableViewController.swift in Sources */,
+				234C0821221459FE004AE2AD /* PageOneViewController.swift in Sources */,
 				23F013A4220DCD9F0061A610 /* RootTabViewController.swift in Sources */,
 				45DB375120498D4100ECC937 /* FavOneViewController.swift in Sources */,
 				23F013A2220DCB9C0061A610 /* FavTwoViewController.swift in Sources */,
 				23F013B92212D6FD0061A610 /* AuthService.swift in Sources */,
+				234C082322145A0E004AE2AD /* PageTwoViewController.swift in Sources */,
+				234C081F221458DE004AE2AD /* ContactsPageViewController.swift in Sources */,
+				234C08252214727B004AE2AD /* FavThreeViewController.swift in Sources */,
 				45DB374C2049823600ECC937 /* MenuItemTableCell.swift in Sources */,
 				45DB374620492F8A00ECC937 /* ProfileViewController.swift in Sources */,
 				23F013B62212CBCD0061A610 /* User.swift in Sources */,

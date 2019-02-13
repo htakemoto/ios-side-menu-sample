@@ -11,6 +11,7 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: Properties
     
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var buildLabel: UILabel!
     
@@ -18,14 +19,21 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "Settings"
-        versionLabel.text = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "?"
-        buildLabel.text = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "?"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateUser()
+    }
+    
+    // MARK: Private Methods
+    
+    private func updateUser() {
+        let user = AuthService.shared.getUserInfo()
+        fullNameLabel.text = "\(user.firstName) \(user.lastName)"
+        versionLabel.text = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "?"
+        buildLabel.text = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "?"
     }
     
 }

@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Button Actions
     
-    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func menuButtonTapped(_ sender: UIBarButtonItem) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.appMenu?.showMenu()
     }

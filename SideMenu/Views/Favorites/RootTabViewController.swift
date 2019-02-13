@@ -18,12 +18,16 @@ class RootTabViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("RootTabViewController:viewWillAppear")
-        self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu"), style: .plain, target: self, action: #selector(menuButtonPressed))
+        setMenuButton()
     }
     
-    // MARK: Button Actions
+    // MARK: Private Methods
     
-    @objc func menuButtonPressed(sender: UIBarButtonItem) {
+    private func setMenuButton() {
+        self.tabBarController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu"), style: .plain, target: self, action: #selector(menuButtonTapped))
+    }
+    
+    @objc func menuButtonTapped(sender: UIBarButtonItem) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.appMenu?.showMenu()
     }

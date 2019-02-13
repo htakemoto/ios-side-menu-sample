@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="pdy-hr-ToR">
                         <barButtonItem key="leftBarButtonItem" image="ic_menu" id="tfk-gF-8zr">
                             <connections>
-                                <action selector="menuButtonPressed:" destination="BYZ-38-t0r" id="gmB-Lv-Gp3"/>
+                                <action selector="menuButtonTapped:" destination="BYZ-38-t0r" id="3Vv-oR-Ah2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,7 +78,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.2170743285" green="0.37695630460000001" blue="0.67936187410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="48I-rp-beT" secondAttribute="bottom" constant="20" id="0ag-1T-oOL"/>
                                             <constraint firstAttribute="trailing" secondItem="ezi-sD-nGN" secondAttribute="trailing" constant="8" id="VdH-tE-for"/>
@@ -107,7 +107,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZn-Od-YDZ">
+                                                        <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZn-Od-YDZ">
                                                             <rect key="frame" x="15" y="7" width="28" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="38v-SY-0g5"/>
@@ -184,6 +184,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rR0-mp-rfJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BK6-89-cxJ"/>
                     </connections>

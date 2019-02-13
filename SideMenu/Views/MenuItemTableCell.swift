@@ -14,11 +14,7 @@ class MenuItemTableCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
-    // MARK: Life Cycles
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    // MARK: Override Methods
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

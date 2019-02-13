@@ -21,7 +21,7 @@ struct MenuItem {
     var displayStyle: DisplayStyle
 }
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenuViewController: UIViewController {
     
     // MARK: Properties
 
@@ -50,26 +50,81 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", id: "Login", storyboard: "Login", displayStyle: DisplayStyle.modal)
         menuItems.append(menuItem)
         
+        setBlurEffectOnBackground()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("MenuViewController:viewWillAppear")
+        setUser()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setBlurEffectOnBackground() {
         self.view.backgroundColor = .clear
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(blurEffectView, at: 0)
-        
+    }
+    
+    private func setUser() {
         if (AuthService.shared.isAuthenticated) {
             let user = AuthService.shared.getUserInfo()
             userNameLabel.text = "\(user.firstName) \(user.lastName)"
             userEmailLabel.text = "\(user.email)"
         }
     }
+    
+    // MARK: - Menu Actions
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func showMenu() {
+        UIApplication.shared.keyWindow?.rootViewController?.view.addSubview(self.view)
+        
+        self.beginAppearanceTransition(true, animated: true)
+        self.view.isHidden = false
+        self.view.alpha = 0
+        self.menuView.frame = self.menuView.frame.offsetBy(dx: -self.menuView.frame.size.width, dy: 0)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.view.alpha = 1
+            let bounds = self.menuView.bounds
+            self.menuView.frame = CGRect(x:0, y:0, width:bounds.size.width, height:bounds.size.height)
+        }, completion: {_ in
+            self.endAppearanceTransition()
+        })
+        
     }
     
-    // MARK: - UITableViewDataSource & UITableViewDelegate
+    func hideMenu() {
+        self.beginAppearanceTransition(false, animated: true)
+        self.view.isHidden = false
+        self.view.alpha = 1
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.view.alpha = 0
+            self.menuView.frame = self.menuView.frame.offsetBy(dx: -self.menuView.frame.size.width, dy: 0)
+        }, completion: {_ in
+            self.view.isHidden = true
+            self.endAppearanceTransition()
+            self.view.removeFromSuperview()
+        })
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let position = touch.location(in: view)
+            if (position.x > self.menuView.bounds.size.width) {
+                self.hideMenu()
+            }
+        }
+    }
+    
+}
+
+extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
@@ -139,50 +194,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             // }
         }
         self.hideMenu()
-    }
-    
-    // MARK: - Menu Actions
-
-    func showMenu() {
-        UIApplication.shared.keyWindow?.rootViewController?.view.addSubview(self.view)
-        
-        self.beginAppearanceTransition(true, animated: true)
-        self.view.isHidden = false
-        self.view.alpha = 0
-        self.menuView.frame = self.menuView.frame.offsetBy(dx: -self.menuView.frame.size.width, dy: 0)
-        
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
-            self.view.alpha = 1
-            let bounds = self.menuView.bounds
-            self.menuView.frame = CGRect(x:0, y:0, width:bounds.size.width, height:bounds.size.height)
-        }, completion: {_ in
-            self.endAppearanceTransition()
-        })
-        
-    }
-    
-    func hideMenu() {
-        self.beginAppearanceTransition(false, animated: true)
-        self.view.isHidden = false
-        self.view.alpha = 1
-        
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: UIView.AnimationOptions.curveEaseOut, animations: {
-            self.view.alpha = 0
-            self.menuView.frame = self.menuView.frame.offsetBy(dx: -self.menuView.frame.size.width, dy: 0)
-        }, completion: {_ in
-            self.view.isHidden = true
-            self.endAppearanceTransition()
-            self.view.removeFromSuperview()
-        })
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let position = touch.location(in: view)
-            if (position.x > self.menuView.bounds.size.width) {
-                self.hideMenu()
-            }
-        }
     }
     
 }

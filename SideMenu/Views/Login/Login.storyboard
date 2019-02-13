@@ -42,7 +42,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="3y0-gx-sy0" eventType="touchUpInside" id="nYf-xX-NeS"/>
+                                    <action selector="loginButtonPressed:" destination="3y0-gx-sy0" eventType="touchUpInside" id="MXM-Uk-v6Y"/>
                                 </connections>
                             </button>
                         </subviews>

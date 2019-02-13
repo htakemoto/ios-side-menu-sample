@@ -9,23 +9,43 @@ import Foundation
 
 class AuthService {
     
+    // MARK: Properties
+    
     static let shared = AuthService()
-    private var user: User = User()
+    var user: User {
+        get {
+            let firstName = Preferences.firstName
+            let lastName = Preferences.lastName
+            let email = Preferences.email
+            return User(firstName: firstName, lastName: lastName, email: email)
+        }
+        set {
+            Preferences.firstName = newValue.firstName
+            Preferences.lastName = newValue.lastName
+            Preferences.email = newValue.email
+        }
+    }
     var isAuthenticated: Bool = false
     
     init() {}
     
+    // MARK: Public Methods
+    
     func login(username: String, password: String) {
-        user.setUser(firstName: "Steve", lastName: "Jobs", email: "steve.jobs@apple.com")
+        self.user = User(firstName: "Steve", lastName: "Jobs", email: "steve.jobs@apple.com")
         isAuthenticated = true
     }
     
     func logout() {
-        user.setUser(firstName: "", lastName: "", email: "")
+        self.user = User(firstName: "", lastName: "", email: "")
         isAuthenticated = false
     }
     
     func getUserInfo() -> User {
-        return user.getUser()
+        return user
+    }
+    
+    func updateUserInfo(_ user: User) {
+        self.user = User(firstName: user.firstName, lastName: user.lastName, email: user.email)
     }
 }
