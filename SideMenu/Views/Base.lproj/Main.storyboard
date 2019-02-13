@@ -192,41 +192,6 @@
             </objects>
             <point key="canvasLocation" x="-249" y="134"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="Ur3-Yz-Kdk">
-            <objects>
-                <viewController storyboardIdentifier="Login" id="sOR-sZ-Qyj" customClass="LoginViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KxD-tx-OYM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUs-w6-yUw">
-                                <rect key="frame" x="147.5" y="316.5" width="80" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="4rl-FU-2Mb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonPressed:" destination="sOR-sZ-Qyj" eventType="touchUpInside" id="gUh-CR-NiN"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.21707432851578498" green="0.37695630464913205" blue="0.67936187407692072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="gUs-w6-yUw" firstAttribute="centerX" secondItem="KxD-tx-OYM" secondAttribute="centerX" id="5Pf-7K-6Hj"/>
-                            <constraint firstItem="gUs-w6-yUw" firstAttribute="centerY" secondItem="KxD-tx-OYM" secondAttribute="centerY" id="E58-hP-WTP"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="fYD-6z-RYW"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="XeO-n4-aUB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5CG-0A-FgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="476" y="-537"/>
-        </scene>
     </scenes>
     <resources>
         <image name="ic_account_circle" width="96" height="96"/>

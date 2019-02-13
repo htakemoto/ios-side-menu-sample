@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // show login screen
         if (AuthService.shared.isAuthenticated == false) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "Login")
             if let window = UIApplication.shared.delegate?.window {
                 if var currentViewController = window?.rootViewController {

@@ -47,7 +47,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuItems.append(menuItem)
         menuItem = MenuItem.init(name:"Settings", icon:"ic_settings", id: "Settings", storyboard: "Settings", displayStyle: DisplayStyle.push)
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", id: "Login", storyboard: "Main", displayStyle: DisplayStyle.modal)
+        menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", id: "Login", storyboard: "Login", displayStyle: DisplayStyle.modal)
         menuItems.append(menuItem)
         
         self.view.backgroundColor = .clear
