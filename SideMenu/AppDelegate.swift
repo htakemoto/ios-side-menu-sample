@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var appMenu: MenuViewController?
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,6 +28,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Menu")
         appMenu = viewController as? MenuViewController
+        
+        // instantiate AppCoordinator for page navigation
+        // option 1: use UINavigationController object defined from Storyboard
+        if let rootViewController = window?.rootViewController {
+            if (rootViewController is UINavigationController) {
+                self.appCoordinator = AppCoordinator(navigationController: rootViewController as! UINavigationController)
+            }
+        }
+        // option 2: initialize UINavigationController object
+//        let navigationController = UINavigationController()
+//        appCoordinator = AppCoordinator(navigationController: navigationController)
+//        appCoordinator?.start()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
         
         return true
     }
@@ -50,8 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // show login screen
         if (AuthService.shared.isAuthenticated == false) {
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let loginViewController = storyboard.instantiateViewController(withIdentifier: "Login")
             if let window = UIApplication.shared.delegate?.window {
                 if var currentViewController = window?.rootViewController {
                     // handle navigation controllers
@@ -60,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     // prevent from opening another login screen on login screen
                     if !(currentViewController is LoginViewController) {
-                        currentViewController.present(loginViewController, animated: false, completion: nil)
+                        appCoordinator?.showLogin()
                     }
                 }
             }

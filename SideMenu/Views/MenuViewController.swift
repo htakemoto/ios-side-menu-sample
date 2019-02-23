@@ -16,8 +16,6 @@ enum DisplayStyle {
 struct MenuItem {
     var name: String
     var icon: String
-    var id: String
-    var storyboard: String
     var displayStyle: DisplayStyle
 }
 
@@ -39,15 +37,15 @@ class MenuViewController: UIViewController {
         menuTableView.delegate = self
         menuTableView.dataSource = self
         
-        var menuItem = MenuItem.init(name:"Main", icon:"ic_home", id: "Main", storyboard: "Main", displayStyle: DisplayStyle.change)
+        var menuItem = MenuItem.init(name:"Main", icon:"ic_home", displayStyle: DisplayStyle.change)
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Profile", icon:"ic_account_box", id: "Profile", storyboard: "Profile", displayStyle: DisplayStyle.change)
+        menuItem = MenuItem.init(name:"Profile", icon:"ic_account_box", displayStyle: DisplayStyle.change)
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Favorites", icon:"ic_favorite_border", id: "Favorites", storyboard: "Favorites", displayStyle: DisplayStyle.change)
+        menuItem = MenuItem.init(name:"Favorites", icon:"ic_favorite_border", displayStyle: DisplayStyle.change)
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Settings", icon:"ic_settings", id: "Settings", storyboard: "Settings", displayStyle: DisplayStyle.push)
+        menuItem = MenuItem.init(name:"Settings", icon:"ic_settings", displayStyle: DisplayStyle.push)
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", id: "Login", storyboard: "Login", displayStyle: DisplayStyle.modal)
+        menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", displayStyle: DisplayStyle.modal)
         menuItems.append(menuItem)
         
         setBlurEffectOnBackground()
@@ -148,50 +146,18 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let menuItem = menuItems[indexPath.row]
         
-        // reset viewControllers inside of rootViewController
-        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        guard let navigationController = rootViewController as? UINavigationController else { return }
-        print("# of views in navigationController \(navigationController.viewControllers.count)")
-        print("first view name in root view controller \(navigationController.viewControllers[0])")
-        
-        // set a selected viewController
-        let storyboard = UIStoryboard(name: menuItem.storyboard, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: menuItem.id)
-        
-        if (menuItem.displayStyle == DisplayStyle.change) {
-            // option 1: reset the current view controller to new one in stack of navigation controller
-            navigationController.setViewControllers([viewController], animated: false)
-            
-            // Option 2: add a new view controller on top of the first view controller in stack of navigation controller
-            // if (navigationController.viewControllers.count > 0) {
-            //     navigationController.popToViewController(navigationController.viewControllers[0], animated: false)
-            // }
-            // if (object_getClassName(viewController) != object_getClassName(navigationController.viewControllers[0])) {
-            //     navigationController.pushViewController(viewController, animated: false)
-            // }
-        }
-        else if (menuItem.displayStyle == DisplayStyle.push) {
-            navigationController.pushViewController(viewController, animated: true)
-        }
-        else {
-            // option 1: use current navigationController (viewController in container is optional)
-            let container = UINavigationController(rootViewController: viewController)
-            if (menuItem.name == "Logout") {
-                container.setNavigationBarHidden(true, animated: false)
-                AuthService.shared.logout()
-            }
-            navigationController.present(container, animated: true, completion: nil)
-            
-            // option 2: search current viewController to present on top of it
-            // if let window = UIApplication.shared.delegate?.window {
-            //    if var currentViewController = window?.rootViewController {
-            //        // handle navigation controllers
-            //        if (currentViewController is UINavigationController){
-            //            currentViewController = (currentViewController as! UINavigationController).visibleViewController!
-            //        }
-            //        currentViewController.present(viewController, animated: true, completion: nil)
-            //    }
-            // }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        switch menuItem.name {
+        case "Profile":
+            appDelegate.appCoordinator?.showProfile()
+        case "Favorites":
+            appDelegate.appCoordinator?.showFavorites()
+        case "Settings":
+            appDelegate.appCoordinator?.showSettings()
+        case "Logout":
+            appDelegate.appCoordinator?.showLogin()
+        default: // = "Main"
+            appDelegate.appCoordinator?.showMain()
         }
         self.hideMenu()
     }
