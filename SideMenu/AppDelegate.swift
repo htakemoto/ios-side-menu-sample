@@ -34,9 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let rootViewController = window?.rootViewController {
             if (rootViewController is UINavigationController) {
                 self.appCoordinator = AppCoordinator(navigationController: rootViewController as! UINavigationController)
+                self.appCoordinator?.start()
             }
         }
-        // option 2: initialize UINavigationController object
+        
+        // option 2: initialize initialViewController object from storyboard
+//        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+//        appCoordinator = AppCoordinator(navigationController: navigationController)
+//        appCoordinator?.start()
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
+        
+        // option 3: initialize UINavigationController object
 //        let navigationController = UINavigationController()
 //        appCoordinator = AppCoordinator(navigationController: navigationController)
 //        appCoordinator?.start()
@@ -74,7 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     // prevent from opening another login screen on login screen
                     if !(currentViewController is LoginViewController) {
-                        appCoordinator?.showLogin()
+                        let animated = !Preferences.isFirstLaunch()
+                        appCoordinator?.showLogin(animated: animated)
                     }
                 }
             }

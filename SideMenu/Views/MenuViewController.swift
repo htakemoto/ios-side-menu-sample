@@ -155,7 +155,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         case "Settings":
             appDelegate.appCoordinator?.showSettings()
         case "Logout":
-            appDelegate.appCoordinator?.showLogin()
+            appDelegate.appCoordinator?.showLogin(animated: true)
         default: // = "Main"
             appDelegate.appCoordinator?.showMain()
         }

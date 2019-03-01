@@ -23,4 +23,13 @@ struct Preferences {
         get { return UserDefaults.standard.string(forKey: #function) ?? "" }
         set { UserDefaults.standard.set(newValue, forKey: #function) }
     }
+    
+    static func isFirstLaunch() -> Bool {
+        let launchedBefore = "launchedBefore"
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: launchedBefore)
+        if (isFirstLaunch) {
+            UserDefaults.standard.set(true, forKey: launchedBefore)
+        }
+        return isFirstLaunch
+    }
 }

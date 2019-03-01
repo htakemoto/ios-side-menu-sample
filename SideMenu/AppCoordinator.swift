@@ -60,7 +60,7 @@ class AppCoordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showLogin() {
+    func showLogin(animated: Bool) {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Login")
         
@@ -68,7 +68,7 @@ class AppCoordinator {
         let container = UINavigationController(rootViewController: viewController)
         container.setNavigationBarHidden(true, animated: false)
         AuthService.shared.logout()
-        navigationController.present(container, animated: true, completion: nil)
+        navigationController.present(container, animated: animated, completion: nil)
         
         // option 2: search current viewController to present on top of it
         // if let window = UIApplication.shared.delegate?.window {
