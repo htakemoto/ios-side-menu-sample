@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="zL4-TQ-iVe">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingPage1" id="lYo-yI-1m0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u8v-6k-p1j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exn-KJ-u6j">
+                                <rect key="frame" x="152" y="323" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a demo application to show how to implemnt Side Menu" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-Oe-D2D">
+                                <rect key="frame" x="67.5" y="374" width="240" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="PCG-pH-l09"/>
+                                    <constraint firstAttribute="height" constant="35" id="ddP-FN-m6B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="exn-KJ-u6j" firstAttribute="centerY" secondItem="u8v-6k-p1j" secondAttribute="centerY" id="B1e-1Z-AmA"/>
+                            <constraint firstItem="geZ-Oe-D2D" firstAttribute="top" secondItem="exn-KJ-u6j" secondAttribute="bottom" constant="30" id="Cdz-Um-Zue"/>
+                            <constraint firstItem="exn-KJ-u6j" firstAttribute="centerX" secondItem="u8v-6k-p1j" secondAttribute="centerX" id="ROo-B4-KY5"/>
+                            <constraint firstItem="geZ-Oe-D2D" firstAttribute="centerX" secondItem="u8v-6k-p1j" secondAttribute="centerX" id="yku-Ik-gtf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xB0-Gq-2Mi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="iuh-OH-8De"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2k-bO-Yyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="1.3493253373313345"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="q5D-TC-uvf">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingPage2" id="uJR-jT-OUR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8N9-ya-u0p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-0z-KqL">
+                                <rect key="frame" x="113" y="323" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-QA-5yi">
+                                <rect key="frame" x="67.5" y="374" width="240" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="I7F-eH-TET"/>
+                                    <constraint firstAttribute="height" constant="100" id="slg-og-1DP"/>
+                                </constraints>
+                                <string key="text">The screen you are seeing is typically called Onbarding Screen which is also a part of demo in this application to show how to implemnt Onboarding Screen</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mvf-0z-KqL" firstAttribute="centerY" secondItem="8N9-ya-u0p" secondAttribute="centerY" id="MU1-PT-pwL"/>
+                            <constraint firstItem="Im1-QA-5yi" firstAttribute="top" secondItem="Mvf-0z-KqL" secondAttribute="bottom" constant="30" id="PSI-9K-o3L"/>
+                            <constraint firstItem="Mvf-0z-KqL" firstAttribute="centerX" secondItem="8N9-ya-u0p" secondAttribute="centerX" id="eMD-Qn-2nP"/>
+                            <constraint firstItem="Im1-QA-5yi" firstAttribute="centerX" secondItem="8N9-ya-u0p" secondAttribute="centerX" id="sOR-js-FVq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nMi-gD-D8Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYJ-Jg-E0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="0.44977511244377816"/>
+        </scene>
+        <!--Onboarding Page Last View Controller-->
+        <scene sceneID="5Ug-ML-xOA">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingPageLast" id="psh-AK-U57" customClass="OnboardingPageLastViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wXb-mI-LpN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-Pt-6zH" customClass="RoundButton" customModule="SideMenu" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="484" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aMM-IP-iDO"/>
+                                    <constraint firstAttribute="width" constant="100" id="qZs-IK-Tgn"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.2170743285" green="0.37695630460000001" blue="0.67936187410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2170743285" green="0.37695630460000001" blue="0.67936187410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="customBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goButtonTapped:" destination="psh-AK-U57" eventType="touchUpInside" id="XBl-VK-fsE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready to see demo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HC-qf-ogp">
+                                <rect key="frame" x="81" y="323" width="213.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BiQ-Pt-6zH" firstAttribute="centerX" secondItem="wXb-mI-LpN" secondAttribute="centerX" id="R2X-OH-8gd"/>
+                            <constraint firstItem="BiQ-Pt-6zH" firstAttribute="top" secondItem="5HC-qf-ogp" secondAttribute="bottom" constant="140" id="gfz-Y8-Wkm"/>
+                            <constraint firstItem="5HC-qf-ogp" firstAttribute="centerX" secondItem="wXb-mI-LpN" secondAttribute="centerX" id="m22-vm-5tV"/>
+                            <constraint firstItem="5HC-qf-ogp" firstAttribute="centerY" secondItem="wXb-mI-LpN" secondAttribute="centerY" id="nBH-oH-UOg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="43B-Lv-jVa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZz-aP-iqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3306" y="0.0"/>
+        </scene>
+        <!--Onboarding Page View Controller-->
+        <scene sceneID="vjQ-FG-DHu">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Gew-jZ-lYi" customClass="OnboardingPageViewController" customModule="SideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="BzX-Mz-4Z6"/>
+                        <barButtonItem title="Next" id="bNl-MC-M4W">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="nextButtonTapped:" destination="Gew-jZ-lYi" id="XDD-BW-jeL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Gnl-aS-fdr"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="9ga-iS-YAG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="e2U-Wj-rqO">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="Gew-jZ-lYi" id="Nlm-lx-qCa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="4F6-zs-hso">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="skipButtonTapped:" destination="Gew-jZ-lYi" id="3q9-VF-82L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s39-S7-S57" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sCx-tn-cOw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRe-71-j1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="Onboarding" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="iTq-BV-7Oz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Wx-tA-94I">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HGl-NM-rKe">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Gew-jZ-lYi" kind="relationship" relationship="rootViewController" id="UUG-0w-vRn"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-210" y="1"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QWC-Al-arK">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingPage3" id="5xZ-HS-GRp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vzB-hB-24s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two Hidden Layers Behind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhS-OA-IF7">
+                                <rect key="frame" x="86" y="323" width="203" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is a base Navigation Controller, and Login Screen on top of it. Finally Onboarding Screen on top of the Login Screen" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n0-L4-KQp">
+                                <rect key="frame" x="67.5" y="374" width="240" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CKa-rN-O6P"/>
+                                    <constraint firstAttribute="height" constant="80" id="z2E-kQ-kt8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9n0-L4-KQp" firstAttribute="centerX" secondItem="vzB-hB-24s" secondAttribute="centerX" id="9Fa-35-CKP"/>
+                            <constraint firstItem="9n0-L4-KQp" firstAttribute="top" secondItem="lhS-OA-IF7" secondAttribute="bottom" constant="30" id="RgW-6O-bLR"/>
+                            <constraint firstItem="lhS-OA-IF7" firstAttribute="centerX" secondItem="vzB-hB-24s" secondAttribute="centerX" id="h6C-ZN-RNs"/>
+                            <constraint firstItem="lhS-OA-IF7" firstAttribute="centerY" secondItem="vzB-hB-24s" secondAttribute="centerY" id="mLZ-Hd-eiT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="buk-Gd-wap"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTM-Cv-cip" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648.8000000000002" y="0.44977511244377816"/>
+        </scene>
+    </scenes>
+</document>

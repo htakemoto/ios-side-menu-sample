@@ -18,7 +18,9 @@ class ContactsPageViewController: UIPageViewController {
         ]
     }()
     
-    var pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 150, width: UIScreen.main.bounds.width, height: 150))
+    lazy var pageControl: UIPageControl = {
+        return UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 150, width: UIScreen.main.bounds.width, height: 150))
+    }()
     
     // MARK: View Life Cycles
 
@@ -35,7 +37,6 @@ class ContactsPageViewController: UIPageViewController {
     // MARK: Private Methods
     
     func configurePageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 150, width: UIScreen.main.bounds.width, height: 150))
         pageControl.isEnabled = false
         pageControl.numberOfPages = subViewControllers.count
         pageControl.currentPage = 0

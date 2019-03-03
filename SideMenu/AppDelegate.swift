@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // set navigation bar style
+        // set default navigation bar style
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barStyle = .black
         navigationBarAppearace.barTintColor = UIColor(red: 30/255, green: 70/255, blue: 160/255, alpha: 1)
@@ -84,11 +84,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     // prevent from opening another login screen on login screen
                     if !(currentViewController is LoginViewController) {
-                        let animated = !Preferences.isFirstLaunch()
-                        appCoordinator?.showLogin(animated: animated)
+                        appCoordinator?.showLogin(animated: false)
                     }
                 }
             }
+        }
+        // show onboarding screen for the fisrt lanuch
+        let isFirstLaunch = Preferences.isFirstLaunch()
+        if (isFirstLaunch) {
+            appCoordinator?.showOnboarding(animated: false)
         }
     }
 

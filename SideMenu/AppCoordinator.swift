@@ -20,6 +20,14 @@ class AppCoordinator {
         let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
         navigationController.pushViewController(viewController, animated: false)
     }
+
+    func showOnboarding(animated: Bool = true) {
+        // search current viewController to present on top of it
+        guard let visibleViewController = navigationController.visibleViewController else { return }
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "Onboarding")
+        visibleViewController.present(viewController, animated: animated, completion: nil)
+    }
     
     func showMain() {
         // reset viewControllers inside of rootViewController
@@ -60,7 +68,7 @@ class AppCoordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showLogin(animated: Bool) {
+    func showLogin(animated: Bool = true) {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Login")
         

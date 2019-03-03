@@ -24,6 +24,9 @@
 		23F013BE2213DF010061A610 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013BD2213DF010061A610 /* RoundButton.swift */; };
 		23FCD89322168A230064602F /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCD89222168A220064602F /* AccountTableViewController.swift */; };
 		45CA50D4222185B6005D3B71 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA50D3222185B6005D3B71 /* AppCoordinator.swift */; };
+		45CA50D7222986FB005D3B71 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA50D6222986FB005D3B71 /* OnboardingPageViewController.swift */; };
+		45CA50D922298712005D3B71 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CA50D822298712005D3B71 /* Onboarding.storyboard */; };
+		45CA50DB22298EFC005D3B71 /* OnboardingPageLastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA50DA22298EFC005D3B71 /* OnboardingPageLastViewController.swift */; };
 		45DB372920491DAA00ECC937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB372820491DAA00ECC937 /* AppDelegate.swift */; };
 		45DB372E20491DAA00ECC937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DB372C20491DAA00ECC937 /* Main.storyboard */; };
 		45DB373020491DAA00ECC937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DB372F20491DAA00ECC937 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		23F013BD2213DF010061A610 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		23FCD89222168A220064602F /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		45CA50D3222185B6005D3B71 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		45CA50D6222986FB005D3B71 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		45CA50D822298712005D3B71 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		45CA50DA22298EFC005D3B71 /* OnboardingPageLastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageLastViewController.swift; sourceTree = "<group>"; };
 		45DB372520491DAA00ECC937 /* SideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DB372820491DAA00ECC937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DB372D20491DAA00ECC937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				45DB374B2049823600ECC937 /* MenuItemTableCell.swift */,
 				45DB373A204920A500ECC937 /* MenuViewController.swift */,
 				23F013BA2213C1CA0061A610 /* Login */,
+				45CA50D52229868C005D3B71 /* Onboarding */,
 				45DB374220492EF500ECC937 /* Profile */,
 				45DB374D20498BFF00ECC937 /* Favorites */,
 				23F013AF2212BBEC0061A610 /* Settings */,
@@ -138,6 +145,16 @@
 				23F013A5220DD1C70061A610 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		45CA50D52229868C005D3B71 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				45CA50D822298712005D3B71 /* Onboarding.storyboard */,
+				45CA50D6222986FB005D3B71 /* OnboardingPageViewController.swift */,
+				45CA50DA22298EFC005D3B71 /* OnboardingPageLastViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		45DB371C20491DAA00ECC937 = {
@@ -263,6 +280,7 @@
 				23F013B32212C0650061A610 /* Settings.storyboard in Resources */,
 				45DB372E20491DAA00ECC937 /* Main.storyboard in Resources */,
 				45DB374F20498CB200ECC937 /* Favorites.storyboard in Resources */,
+				45CA50D922298712005D3B71 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +295,7 @@
 				45DB37412049246200ECC937 /* MainViewController.swift in Sources */,
 				45DB373B204920A500ECC937 /* MenuViewController.swift in Sources */,
 				233216B62217B90B0057AAD0 /* Preferences.swift in Sources */,
+				45CA50DB22298EFC005D3B71 /* OnboardingPageLastViewController.swift in Sources */,
 				23F013BE2213DF010061A610 /* RoundButton.swift in Sources */,
 				23F013B12212BE3A0061A610 /* SettingsTableViewController.swift in Sources */,
 				23FCD89322168A230064602F /* AccountTableViewController.swift in Sources */,
@@ -284,6 +303,7 @@
 				23F013A4220DCD9F0061A610 /* RootTabViewController.swift in Sources */,
 				45DB375120498D4100ECC937 /* FavOneViewController.swift in Sources */,
 				23F013A2220DCB9C0061A610 /* FavTwoViewController.swift in Sources */,
+				45CA50D7222986FB005D3B71 /* OnboardingPageViewController.swift in Sources */,
 				23F013B92212D6FD0061A610 /* AuthService.swift in Sources */,
 				234C082322145A0E004AE2AD /* PageTwoViewController.swift in Sources */,
 				234C081F221458DE004AE2AD /* ContactsPageViewController.swift in Sources */,
