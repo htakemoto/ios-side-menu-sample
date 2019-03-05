@@ -45,7 +45,7 @@ class MenuViewController: UIViewController {
         menuItems.append(menuItem)
         menuItem = MenuItem.init(name:"Settings", icon:"ic_settings", displayStyle: DisplayStyle.push)
         menuItems.append(menuItem)
-        menuItem = MenuItem.init(name:"Logout", icon:"ic_exit_to_app", displayStyle: DisplayStyle.modal)
+        menuItem = MenuItem.init(name:"Sign out", icon:"ic_exit_to_app", displayStyle: DisplayStyle.modal)
         menuItems.append(menuItem)
         
         setBlurEffectOnBackground()
@@ -147,6 +147,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         let menuItem = menuItems[indexPath.row]
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var isHideMenu = true
         switch menuItem.name {
         case "Profile":
             appDelegate.appCoordinator?.showProfile()
@@ -154,12 +155,27 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
             appDelegate.appCoordinator?.showFavorites()
         case "Settings":
             appDelegate.appCoordinator?.showSettings()
-        case "Logout":
-            appDelegate.appCoordinator?.showLogin(animated: true)
+        case "Sign out":
+            isHideMenu = false
+            let alert = UIAlertController(title: "Sign out", message: "Are you sure you want to sign out?", preferredStyle:  UIAlertController.Style.alert)
+            let defaultAction = UIAlertAction(title: "Sign out", style: .destructive, handler: {
+                (action: UIAlertAction!) -> Void in
+                self.hideMenu()
+                appDelegate.appCoordinator?.showLogin(animated: true)
+            })
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            alert.addAction(defaultAction)
+            // workaround for UIAlertController showing with delay
+            DispatchQueue.main.async {
+                appDelegate.appCoordinator?.navigationController.present(alert, animated: true, completion: nil)
+            }
         default: // = "Main"
             appDelegate.appCoordinator?.showMain()
         }
-        self.hideMenu()
+        if (isHideMenu) {
+            self.hideMenu()
+        }
     }
     
 }
