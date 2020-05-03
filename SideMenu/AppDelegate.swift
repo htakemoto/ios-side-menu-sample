@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let window = UIApplication.shared.delegate?.window {
                 if var currentViewController = window?.rootViewController {
                     // handle navigation controllers
-                    if (currentViewController is UINavigationController){
+                    if (currentViewController is UINavigationController) {
                         currentViewController = (currentViewController as! UINavigationController).visibleViewController!
                     }
                     // prevent from opening another login screen on login screen

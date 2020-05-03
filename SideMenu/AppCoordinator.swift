@@ -26,6 +26,7 @@ class AppCoordinator {
         guard let visibleViewController = navigationController.visibleViewController else { return }
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "Onboarding")
+        viewController.modalPresentationStyle = .fullScreen
         visibleViewController.present(viewController, animated: animated, completion: nil)
     }
     
@@ -75,6 +76,7 @@ class AppCoordinator {
         // option 1: use current navigationController (viewController in container is optional)
         let container = UINavigationController(rootViewController: viewController)
         container.setNavigationBarHidden(true, animated: false)
+        container.modalPresentationStyle = .fullScreen
         AuthService.shared.logout()
         navigationController.present(container, animated: animated, completion: nil)
         
