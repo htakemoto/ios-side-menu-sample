@@ -11,6 +11,8 @@ class AccountTableViewController: UITableViewController {
 
     // MARK: Properties
     
+    var user: User?
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -36,13 +38,14 @@ class AccountTableViewController: UITableViewController {
     // MARK: Private Methods
     
     private func setUser() {
-        let user = AuthService.shared.getUserInfo()
-        firstNameTextField.insertText(user.firstName)
-        lastNameTextField.insertText(user.lastName)
-        emailTextField.insertText(user.email)
+        if let user = user {
+            firstNameTextField.insertText(user.firstName)
+            lastNameTextField.insertText(user.lastName)
+            emailTextField.insertText(user.email)
+        }
     }
     
-    func setSaveButton() {
+    private func setSaveButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
     }
     
@@ -55,8 +58,8 @@ class AccountTableViewController: UITableViewController {
             let firstName = self.firstNameTextField.text ?? ""
             let lastName = self.lastNameTextField.text ?? ""
             let email = self.emailTextField.text ?? ""
-            let user = User(firstName: firstName, lastName: lastName, email: email)
-            AuthService.shared.updateUserInfo(user)
+            self.user = User(firstName: firstName, lastName: lastName, email: email)
+            self.performSegue(withIdentifier: "SaveUserSegue", sender: nil)
         })
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         dialogMessage.addAction(ok)

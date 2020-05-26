@@ -23,6 +23,7 @@
 		23F013BC2213C1DB0061A610 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F013BB2213C1DB0061A610 /* Login.storyboard */; };
 		23F013BE2213DF010061A610 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F013BD2213DF010061A610 /* RoundButton.swift */; };
 		23FCD89322168A230064602F /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCD89222168A220064602F /* AccountTableViewController.swift */; };
+		4587CB0D247CCC1500567724 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4587CB0C247CCC1500567724 /* README.md */; };
 		45CA50D4222185B6005D3B71 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA50D3222185B6005D3B71 /* AppCoordinator.swift */; };
 		45CA50D7222986FB005D3B71 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA50D6222986FB005D3B71 /* OnboardingPageViewController.swift */; };
 		45CA50D922298712005D3B71 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CA50D822298712005D3B71 /* Onboarding.storyboard */; };
@@ -57,6 +58,7 @@
 		23F013BB2213C1DB0061A610 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		23F013BD2213DF010061A610 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		23FCD89222168A220064602F /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		4587CB0C247CCC1500567724 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45CA50D3222185B6005D3B71 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		45CA50D6222986FB005D3B71 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		45CA50D822298712005D3B71 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		45DB371C20491DAA00ECC937 = {
 			isa = PBXGroup;
 			children = (
+				4587CB0C247CCC1500567724 /* README.md */,
 				45DB372720491DAA00ECC937 /* SideMenu */,
 				45DB372620491DAA00ECC937 /* Products */,
 			);
@@ -279,6 +282,7 @@
 				45DB374420492F3400ECC937 /* Profile.storyboard in Resources */,
 				23F013B32212C0650061A610 /* Settings.storyboard in Resources */,
 				45DB372E20491DAA00ECC937 /* Main.storyboard in Resources */,
+				4587CB0D247CCC1500567724 /* README.md in Resources */,
 				45DB374F20498CB200ECC937 /* Favorites.storyboard in Resources */,
 				45CA50D922298712005D3B71 /* Onboarding.storyboard in Resources */,
 			);

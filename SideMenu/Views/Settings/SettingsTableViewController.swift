@@ -32,12 +32,36 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateUser()
+        loadUser()
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func unwindToSettings(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AccountTableViewController, let user = sourceViewController.user {
+            AuthService.shared.updateUserInfo(user)
+            loadUser()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+        case "SettingsToAccount":
+            guard let destinationVC = segue.destination as? AccountTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            destinationVC.user = AuthService.shared.getUserInfo()
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
+    
     
     // MARK: Private Methods
     
-    private func updateUser() {
+    private func loadUser() {
         let user = AuthService.shared.getUserInfo()
         fullNameLabel.text = "\(user.firstName) \(user.lastName)"
         versionLabel.text = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "?"
